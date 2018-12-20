@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<div class="index_row clearfix">
+<p>
+  <strong>Title:</strong>
+  <%= @todo_list.title %>
+</p>
+
+<p>
+  <strong>String:</strong>
+  <%= @todo_list.string %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @todo_list.description %>
+</p>
+
+<p>
+  <strong>Expected date of Completion:</strong>
+  <%= @todo_list.completion_date %>
+</p>
+
+<p>
+  <strong>Actual date of Completion:</strong>
+  <%= @todo_list.completed_at %>
+</p>
+
+<p>
+  <strong>Whether completed on time?:</strong>
+  <%= @todo_list.completed_on_time? %>
+</p>
+</div>
+<div class="links">
+<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
+<%= link_to 'Back', todo_lists_path %>
+</div>
