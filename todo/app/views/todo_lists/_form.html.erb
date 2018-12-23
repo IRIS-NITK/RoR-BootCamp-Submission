@@ -1,0 +1,72 @@
+<div class="site-wrapper webpage">
+  <div class="container">
+<%= form_with(model: todo_list, local: true) do |form| %>
+  <% if todo_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(todo_list.errors.count, "error") %> prohibited this todo_list from being saved:</h2>
+
+      <ul>
+        <% todo_list.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div id="image_target">
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class='input-group date field' id='datetimepicker1'>
+    <%= form.label :completion_date %>
+    <br>
+    <%= form.text_field :completion_date %>
+    <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+  </div>
+
+  <div class="input-append color" data-color="rgb(255, 146, 180)" data-color-format="rgb">
+    <%= form.label :task_color %>
+    <br>
+    <%= form.text_field :task_color %>
+    <span class="add-on" id="colorpicker" ><i style="background-color: rgb(255, 146, 180); float: inside"></i></span>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $('.color').colorpicker();
+    });
+</script>
+<style>
+  .webpage{
+    color: black;
+  }
+    #datetimepicker1{
+      width: 200px;
+      margin-left: 480px;
+    }
+    .color{
+      width: 200px;
+    }
+
+</style>
