@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version - 2.5.1
 
-Things you may want to cover:
+* Rails Version - 5.2.2
 
-* Ruby version
+Assignment-
+1.A SignUp form after which you can add your daily tasks and see them.
 
-* System dependencies
+2.Datepicker added for the expected completion date of task
 
-* Configuration
+3.Color picker added to change the colour of text for corresponding tasks
 
-* Database creation
+4.Tasks whose expected date is passes will be highlighted in red colour.
 
-* Database initialization
+Instructions:
 
-* How to run the test suite
+1.Go to todo/config/databse.yml and in Password field enter  your sql password
 
-* Services (job queues, cache servers, search engines, etc.)
+2.Now Go to todo folder and execute "bundle install"
 
-* Deployment instructions
+3.Execute "rake db:create" then "rake db:migrate"
 
-* ...
+4.Execute "rails s"
+
+5.On your browser type "localhost:3000"
+
