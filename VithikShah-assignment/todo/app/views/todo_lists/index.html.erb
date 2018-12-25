@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Todo Lists</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Task Completed on Time?</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todo_lists.each do |todo_list| %>
+      <% if todo_list.highlight? %>
+       <tr class="danger" style="color:<%= todo_list.color %>;">
+        <% else %>
+        <tr style="color:<%= todo_list.color %>;">
+          <%end %>
+        <td><%= todo_list.title %></td>
+        <td><%= todo_list.description %></td>
+        <td><%= todo_list.completed_on_time? %></td>
+        <td><%= link_to 'Show', todo_list %></td>
+        <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
+        <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if todo_list.completed? %>
+          <td>Task Completed </td>
+          <% else %>
+        <td><%= link_to "Mark as Complete", complete_todo_list_path(todo_list), method: :patch %></td>
+      <%end %>
+          </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Todo List', new_todo_list_path %>
+

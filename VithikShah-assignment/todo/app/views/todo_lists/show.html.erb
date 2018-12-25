@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @todo_list.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @todo_list.description %>
+</p>
+
+<p>
+  <strong>Expected Date of Completion of Task:</strong>
+  <%= @todo_list.completion_date %>
+</p>
+
+<p>
+  <strong>Actual date of Completion of Task:</strong>
+  <%= @todo_list.completed_at %>
+</p>
+
+<p>
+  <strong>Was the Task completed on time?:</strong>
+  <%= @todo_list.completed_on_time? %>
+</p>
+
+<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
+<%= link_to 'Back', todo_lists_path %>
